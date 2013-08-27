@@ -1,0 +1,11 @@
+{
+  "name": "thebudget",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.0-rc.1",
+    "angular-route": "1.2.0-rc.1",
+    "ng-grid": "2.0.7",
+    "jquery": "2.0.3",
+    "bootstrap": "3.0.0"
+  }
+}
