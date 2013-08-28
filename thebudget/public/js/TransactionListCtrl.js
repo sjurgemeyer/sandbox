@@ -1,10 +1,11 @@
-function TransactionListCtrl($scope, $http, $location) {
+function TransactionListCtrl($scope, $http, $location, navService) {
     var dataUrl = 'viewTransactions';
     var category = ($location.search()).category;
     if (category) {
         dataUrl = dataUrl + '/' + category;
     }
     console.log(dataUrl);
+    navService.setCurrentTab('transactions');
     $http.get(dataUrl).success(function(data) {
         $scope.transactions = data
     });

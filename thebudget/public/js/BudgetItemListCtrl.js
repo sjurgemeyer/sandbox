@@ -1,4 +1,4 @@
-function BudgetItemListCtrl($scope, $http, $location) {
+function BudgetItemListCtrl($scope, $http, $location, navService) {
     $http.get('viewBudgetItems').success(function(data) {
         $scope.budgetItems = data
     });
@@ -6,6 +6,7 @@ function BudgetItemListCtrl($scope, $http, $location) {
     var transactionLinkTemplate = "<div class=\"ngCellText\" ng-class=\"col.colIndex()\"><span ng-cell-text>" +
     "<button ng-click=\"viewTransactions(col, row)\" class=\"btn-xs btn-default\">View Transactions</button></a></span></div>";
     var deleteTemplate = "<div><button ng-click=\"deleteBudgetItem(col, row)\" class=\"btn-xs btn-default\">Delete</button></div>";
+    navService.setCurrentTab('budgetItems');
     $scope.handleSubmit = function(budgetItem) {
         if (window.event) {
             key = window.event.keyCode;
